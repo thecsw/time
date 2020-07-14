@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded",() => {
     let time = document.querySelector("#time");
+    let sub = document.querySelector("#sub");
     const day = 24 * 60 * 60 * 1000;
 
-    let now = () =>  {
-	let date = new Date();
-	let start = new Date(date.getFullYear(), 0, 0, 0, 0, 0, 0)
-	let diff = Math.round(Math.abs((date - start) / day));
-	return diff + "; " + (date.getFullYear() + 10000).toLocaleString() + " H.E."
-    }
+    let now = new Date();
+    let start = new Date(now.getFullYear(), 0, 0)
+    var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
 
-    time.innerText = now();
+    time.innerText = Math.floor(diff / day) + "; " + (now.getFullYear() + 10000) + " H.E.";
+    sub.innerText = now.getHours() + "" + now.getMinutes();
 });
