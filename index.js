@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded",() => {
     var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
 
     time.innerText = Math.floor(diff / day) + "; " + (now.getFullYear() + 10000) + " H.E.";
-    sub.innerText = now.getHours() + "" + now.getMinutes();
+    sub.innerText = (now.getHours() * 100 + now.getMinutes()).toString().padStart(4, "0");
 });
