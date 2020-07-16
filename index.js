@@ -17,5 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTime();
-    setInterval(setTime, 60 * 1000);
+    setInterval(setTime, 1000);
 });
