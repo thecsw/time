@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	    Math.floor(diff / day) + "; " + (now.getFullYear() + 10000) + " H.E.";
 	sub.innerText = (now.getHours() * 100 + now.getMinutes())
 	    .toString()
-	    .padStart(4, "0");
+	    .padStart(4, "0") + "." + now.getSeconds().toString().padStart(2, "0");
     }
 
     setTime();
